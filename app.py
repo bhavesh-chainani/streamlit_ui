@@ -3,11 +3,11 @@ import time
 import pandas as pd
 import re
 
-# Set page config
-st.set_page_config(page_title="Grant Proposal Assistant", layout="centered")
+# Set page config to wide layout for better screen fit
+st.set_page_config(page_title="Grant Proposal Assistant", layout="wide")
 
-# Custom CSS for highlighting missing info
-highlight_css = """
+# Custom CSS for highlighting missing info and optional zoom
+custom_css = """
 <style>
 .missing-info {
     background-color: #fff2ac;
@@ -16,11 +16,12 @@ highlight_css = """
 }
 </style>
 """
-st.markdown(highlight_css, unsafe_allow_html=True)
+st.markdown(custom_css, unsafe_allow_html=True)
 
 # Display PwC logo
 st.image("images/pwc_logo.png", width=100)
 
+# Title
 st.title("🧠 Grant Proposal Assistant")
 
 # Default prompt
@@ -43,9 +44,8 @@ if "chatbot_output" not in st.session_state:
     st.session_state.chatbot_output = ""
 
 # Step 1: Initial Chatbot
-user_input = st.text_input(
-    "Ask me anything about your grant proposal:", value=default_prompt
-)
+st.subheader("💬 Ask the Assistant")
+user_input = st.text_input("Ask me anything about your grant proposal:", value=default_prompt)
 
 if st.button("Submit Query"):
     if user_input.strip():
@@ -58,7 +58,7 @@ if st.button("Submit Query"):
             with open("data/chatbot_response.txt", "r", encoding="utf-8") as f:
                 st.session_state.chatbot_output = f.read()
 
-# Display chatbot response if available
+# Display chatbot response
 if st.session_state.chat_submitted and st.session_state.chatbot_output:
     st.success("Here's the response:")
     st.markdown(st.session_state.chatbot_output)
