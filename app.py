@@ -30,7 +30,7 @@ default_prompt = (
     "that provide this funding?"
 )
 
-# Initialize session state (fixed to preserve existing values)
+# Initialize session state
 if "chat_submitted" not in st.session_state:
     st.session_state.chat_submitted = False
 if "report_generated" not in st.session_state:
@@ -96,52 +96,42 @@ if st.session_state.research_uploaded:
             ]
             for step in loading_steps:
                 st.text(step)
-                time.sleep(0.3)
+                time.sleep(1)
             time.sleep(1)
 
+# Render report persistently after generation
+if st.session_state.report_generated:
+    try:
         with open("data/dummy_report.txt", "r", encoding="utf-8") as f:
             report = f.read()
 
         st.success("📝 Grant Proposal Report")
 
-        # Highlight "Information Not Available" inside bullet points
         highlighted_report = re.sub(
             r"(Information Not Available)",
             r"<span class='missing-info'>\1</span>",
             report,
         )
 
-        # Render the markdown with highlights
         with st.expander("🔍 View Full Grant Report", expanded=True):
             st.markdown(highlighted_report, unsafe_allow_html=True)
 
-        # Allow the user to download the report
         st.download_button(
             label="📄 Download Report as .txt",
             data=report,
             file_name="grant_proposal.txt",
             mime="text/plain",
         )
+    except Exception as e:
+        st.error(f"❌ Failed to load grant report: {e}")
 
 # Step 4: Data Schema Match
 if st.session_state.report_generated:
     if st.button("🔍 Check Data Schema"):
         st.session_state.schema_checked = True
-        with open("data/dummy_report.txt", "r", encoding="utf-8") as f:
-            report_text = f.read().lower()
-
-        schema_results = {
-            "Summary": "summary" in report_text,
-            "Number of Personnel present": any(
-                kw in report_text for kw in ("personnel", "team", "staff")
-            ),
-            "Grant amount": any(
-                kw in report_text for kw in ("grant", "amount", "funding")
-            ),
-        }
-
-        results_df = pd.DataFrame(
-            list(schema_results.items()), columns=["Field", "Present"]
-        )
-        st.success("Schema Validation Result:")
-        st.table(results_df)
+        try:
+            table_data_df = pd.read_excel("data/table_data.xlsx")
+            st.success("✅ Proposal Section Checklist")
+            st.dataframe(table_data_df, use_container_width=True)
+        except Exception as e:
+            st.error(f"❌ Failed to load table_data.xlsx: {e}")
