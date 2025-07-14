@@ -132,20 +132,27 @@ if st.session_state.research_uploaded:
         st.session_state.report_generated = True
         with st.spinner("Creating A*STAR-style report..."):
             loading_steps = [
-                "Generating 1. 🧬 Introduction",
-                "Generating 2. 🎯 Scientific Objectives",
-                "Generating 3. 🧪 Methodology",
-                "Generating 4. 📈 Expected Outcomes",
-                "Generating 5. 🇸🇬 Relevance to Singapore & A*STAR RIE2025 Priorities",
-                "Generating 6. 👥 Personnel & Team Composition",
-                "Generating 7. 🗓️ Workplan & Milestones",
-                "Generating 8. ⚖️ Ethics & Regulatory Considerations",
-                "Generating 9. 💸 Detailed Budget",
-                "Generating 10. 📎 Appendices",
+                "Generating 1. 🧾 General Information",
+                "Generating 2. 🧪 Scientific Abstract of the Proposal",
+                "Generating 3. 🎯 Objectives",
+                "Generating 4. 🔬 Methodology",
+                "Generating 5. 📊 Expected Scientific Results of the Joint Research",
+                "Generating 6. 🌍 Expected Economic and Social Impact of the Joint Research",
+                "Generating 7. 🏷️ Keywords",
+                "Generating 8. 📅 Research Topic and Work Plan",
+                "Generating 9. 📘 Detailed Description of Joint Project",
+                "Generating 10. ❗ Problem Statement",
+                "Generating 11. 🔮 Future Prospect of Research",
+                "Generating 12. 📚 Bibliography",
+                "Generating 13. 💰 Budget Description",
+                "Generating 14. 🤝 Work Contribution",
+                "Generating 15. 📄 Curriculum Vitae",
+                "Generating 16. 🙏 Acknowledgment",
+                "Generating 17. 📎 Appendices",
             ]
             for step in loading_steps:
                 st.text(step)
-                time.sleep(1)
+                time.sleep(0.6)
             time.sleep(1)
 
 # Step 4: Render Final Report
