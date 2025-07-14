@@ -6,7 +6,7 @@ import re
 # Set page config
 st.set_page_config(page_title="Grant Proposal Assistant", layout="centered")
 
-# Custom CSS for highlighting and buttons
+# Custom CSS
 custom_css = """
 <style>
 .missing-info {
@@ -30,6 +30,34 @@ custom_css = """
 .button:hover {
     background-color: #ef6c00;
 }
+.grant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+.grant-table th, .grant-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+.grant-table th {
+    background-color: #f57c00;
+    color: white;
+}
+.grant-table td a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: bold;
+}
+.grant-table p {
+    margin: 0.3em 0;
+    text-align: left;
+}
+.grant-table ul {
+    padding-left: 1.2em;
+    text-align: left;
+}
 </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
@@ -39,10 +67,9 @@ st.image("images/pwc_logo.png", width=100)
 
 st.title("🧠 Grant Proposal Assistant")
 
-# Default prompt
 default_prompt = "Climate resilience, Singapore"
 
-# Initialize session state
+# Session state setup
 for key in [
     "chat_submitted",
     "report_generated",
@@ -55,7 +82,7 @@ for key in [
     if key not in st.session_state:
         st.session_state[key] = False if key != "chatbot_output" else ""
 
-# Step 1: Initial Chatbot Query
+# User input
 user_input = st.text_area(
     "Please specify your research area and location to view available funding opportunities/programmes.",
     value=default_prompt,
@@ -79,32 +106,59 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
     st.success("Here's the response:")
     st.markdown(st.session_state.chatbot_output)
 
-    st.markdown(
-        "### 📑 These are the grant proposals above, which grant would you like us to choose?"
-    )
+    st.markdown("### 📑 These are the grant proposals above, which grant would you like us to choose?")
 
     try:
         grant_df = pd.read_excel("data/grant_companies.xlsx")
-        st.dataframe(grant_df, use_container_width=True)
+
+        # Format Link column to be clickable
+        if "Link" in grant_df.columns:
+            grant_df["Link"] = grant_df["Link"].apply(
+                lambda url: f'<a href="{url}" target="_blank">Visit Link</a>' if pd.notnull(url) else ""
+            )
+
+        # Format Summary column to show bullets and paragraphs correctly
+        def format_summary(text):
+            if pd.isnull(text):
+                return ""
+            lines = text.strip().split("\n")
+            formatted_lines = []
+            in_list = False
+            for line in lines:
+                if line.strip().startswith("-"):
+                    if not in_list:
+                        formatted_lines.append("<ul>")
+                        in_list = True
+                    formatted_lines.append(f"<li>{line.strip()[1:].strip()}</li>")
+                else:
+                    if in_list:
+                        formatted_lines.append("</ul>")
+                        in_list = False
+                    formatted_lines.append(f"<p>{line.strip()}</p>")
+            if in_list:
+                formatted_lines.append("</ul>")
+            return "".join(formatted_lines)
+
+        if "Summary" in grant_df.columns:
+            grant_df["Summary"] = grant_df["Summary"].apply(format_summary)
+
+        html_table = grant_df.to_html(escape=False, index=False, classes="grant-table")
+        st.markdown(html_table, unsafe_allow_html=True)
+
     except Exception as e:
         st.error(f"❌ Failed to load grant_companies.xlsx: {e}")
 
     st.markdown("### 🧾 Specify Grant Provider Name")
-
-    grant_input = st.text_input(
-        "Please type the name of the grant provider (e.g., A*STAR):"
-    )
+    grant_input = st.text_input("Please type the name of the grant provider (e.g., A*STAR):")
     if st.button("Submit Grant Provider"):
         if grant_input.strip():
             st.session_state.selected_grant_button = grant_input.strip()
             st.success(f"✅ Selected: {st.session_state.selected_grant_button}")
 
-# Display selected grant template with buffer time
+# Display selected grant template
 if st.session_state.selected_grant_button:
     try:
-        with st.spinner(
-            f"🧾 Generating template report for {st.session_state.selected_grant_button}..."
-        ):
+        with st.spinner(f"🧾 Generating template report for {st.session_state.selected_grant_button}..."):
             time.sleep(2)
             with open("data/template.txt", "r", encoding="utf-8") as f:
                 template_text = f.read()
@@ -113,20 +167,16 @@ if st.session_state.selected_grant_button:
     except Exception as e:
         st.error(f"❌ Could not load template: {e}")
 
-# Step 2: Upload Research Paper
+# Upload research paper
 if st.session_state.chat_submitted and st.session_state.selected_grant_button:
-    st.markdown(
-        "**📄 Would you like me to leverage the best resources and create a grant report that aligns with this template?**"
-    )
+    st.markdown("**📄 Would you like me to leverage the best resources and create a grant report that aligns with this template?**")
     st.markdown("**If yes, upload your initial research paper below 👇**")
-    uploaded_file = st.file_uploader(
-        "Upload your research paper (PDF, TXT, or DOCX)", type=["pdf", "txt", "docx"]
-    )
+    uploaded_file = st.file_uploader("Upload your research paper (PDF, TXT, or DOCX)", type=["pdf", "txt", "docx"])
     if uploaded_file is not None:
         st.session_state.research_uploaded = True
         st.success("Research paper uploaded successfully!")
 
-# Step 3: Generate Report
+# Generate report
 if st.session_state.research_uploaded:
     if st.button("📝 Generate Report"):
         st.session_state.report_generated = True
@@ -155,7 +205,7 @@ if st.session_state.research_uploaded:
                 time.sleep(0.6)
             time.sleep(1)
 
-# Step 4: Render Final Report
+# Render report
 if st.session_state.report_generated:
     try:
         with open("data/dummy_report.txt", "r", encoding="utf-8") as f:
@@ -181,7 +231,7 @@ if st.session_state.report_generated:
     except Exception as e:
         st.error(f"❌ Failed to load grant report: {e}")
 
-# Step 5: Data Schema Match
+# Check data schema
 if st.session_state.report_generated:
     if st.button("🔍 Check Data Schema"):
         st.session_state.schema_checked = True
