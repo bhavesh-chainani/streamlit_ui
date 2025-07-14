@@ -1,0 +1,36 @@
+🏥 Available Grant Providers for Healthcare Research in Singapore
+
+Singapore has a robust ecosystem of funding bodies that support healthcare-related research and innovation. Below is a summary of the key agencies and their respective focus areas:
+
+🔬 1. Agency for Science, Technology and Research (A*STAR)
+- Focus: Biomedical sciences, health technologies, precision medicine, ageing, and chronic disease management
+- Popular Grants:
+  - Industry Alignment Fund – Pre-Positioning (IAF-PP)
+  - Health and Biomedical Sciences Open Fund – IRG
+  - Strategic Positioning Fund (SPF)
+
+🏛 2. Ministry of Health – National Medical Research Council (NMRC)
+- Focus: Translational clinical research, public health, population health, and clinician-scientist development
+- Popular Grants:
+  - Open Fund – Individual Research Grant (OF-IRG)
+  - Health Services Research Grant (HSRG)
+  - Clinician Scientist Award (CSA)
+
+🏫 3. National Research Foundation (NRF)
+- Focus: Strategic R&D areas aligned with national priorities
+- Popular Grants:
+  - Competitive Research Programme (CRP)
+  - AI Singapore’s AI in Health Grand Challenges
+  - Central Gap Fund
+
+💼 4. Enterprise Singapore / Startup SG
+- Focus: MedTech and HealthTech commercialization and startup support
+- Popular Grants:
+  - Startup SG Tech Grant
+  - Enterprise Development Grant (EDG)
+
+🤝 5. Temasek Foundation & Philanthropic Organizations
+- Focus: Health innovation, eldercare, and public health initiatives
+- Popular Opportunities:
+  - Community care innovation grants
+  - Pilot and demonstration funding for healthcare delivery models

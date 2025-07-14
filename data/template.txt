@@ -1,68 +1,120 @@
----
-
-#### 📄 **Template: Grant Proposal (A*STAR-Aligned)**
-
-
-#### 1. 🧬 **Introduction**
-- Background of the health issue  
-- Current research landscape  
-- Unmet needs or challenges  
+# 📄 Grant Proposal Template (A*STAR-Aligned – Food Resilience Focus)
 
 ---
 
-#### 2. 🎯 **Scientific Objectives**
-- Primary objective(s)  
-- Hypotheses or research questions  
+## 1. 🧾 General Information
+- **Project Title**  
+- **Principal Investigator (PI) & Institution**  
+- **Co-Investigators & Collaborators**  
+- **Duration of Project**  
+- **Funding Requested**  
 
 ---
 
-#### 3. 🧪 **Methodology**
-- Study design  
-- Experimental workflow / technical approach  
-- Data collection & analysis plan  
+## 2. 🧪 Scientific Abstract of the Proposal
+- Concise summary of the research aims  
+- Key methodologies  
+- Expected outcomes and impact on food resilience  
 
 ---
 
-#### 4. 📈 **Expected Outcomes**
-- Tangible deliverables (e.g., prototypes, clinical data, publications)  
-- Success criteria  
+## 3. 🎯 Objectives
+- Primary and secondary research objectives  
+- Specific hypotheses or research questions  
 
 ---
 
-#### 5. 🇸🇬 **Relevance to Singapore & A*STAR RIE2025 Priorities**
-- Translational value or commercialization potential  
-- National healthcare impact  
+## 4. 🔬 Methodology
+- Study design and experimental setup  
+- Data collection and analysis techniques  
+- Technologies or platforms to be used  
 
 ---
 
-#### 6. 👥 **Personnel & Team Composition**
-- Principal Investigator (PI) & Co-PIs  
-- Roles and responsibilities  
-- Collaborators (local/international, clinical partners)  
+## 5. 📊 Expected Scientific Results of the Joint Research
+- Anticipated findings and innovations  
+- Contribution to scientific knowledge in food systems  
+- Potential for publications or patents  
 
 ---
 
-#### 7. 🗓️ **Workplan & Milestones**
-- Project timeline over 2–3 years  
-- Key deliverables and checkpoints  
-- *(Gantt chart optional)*
+## 6. 🌍 Expected Economic and Social Impact of the Joint Research
+- Contribution to Singapore’s food security  
+- Commercialization potential  
+- Societal benefits (e.g., nutrition, sustainability, climate resilience)  
 
 ---
 
-#### 8. ⚖️ **Ethics & Regulatory Considerations**
-- IRB approvals  
-- Patient data handling and privacy  
+## 7. 🏷️ Keywords
+- Food resilience  
+- Sustainable agriculture  
+- Alternative proteins  
+- Climate-smart food systems  
+- Supply chain innovation  
 
 ---
 
-#### 9. 💸 **Detailed Budget**
-- Manpower, consumables, equipment, travel  
-- Justification of major costs  
+## 8. 📅 Research Topic and Work Plan
+- Detailed breakdown of research phases  
+- Timeline and milestones  
+- *(Optional: Gantt chart or visual timeline)*  
 
 ---
 
-#### 10. 📎 **Appendices**
-- CVs of key personnel  
-- Letters of collaboration  
-- Preliminary data (if any)  
-"""
+## 9. 📘 Detailed Description of Joint Project
+- Roles of each partner institution  
+- Integration of expertise and resources  
+- Collaboration mechanisms and communication plan  
+
+---
+
+## 10. ❗ Problem Statement
+- Description of the food resilience challenge  
+- Gaps in current solutions  
+- Justification for the proposed research  
+
+---
+
+## 11. 🔮 Future Prospect of Research
+- Long-term vision and scalability  
+- Potential for follow-up studies or spin-offs  
+- Alignment with national and global food strategies  
+
+---
+
+## 12. 📚 Bibliography
+- Key references supporting the proposal  
+- Prior work by the team  
+
+---
+
+## 13. 💰 Budget Description
+- Detailed breakdown of budget allocation  
+- Justification for major cost items  
+- Co-funding or in-kind contributions (if any)  
+
+---
+
+## 14. 🤝 Work Contribution
+- Breakdown of responsibilities among team members  
+- Estimated effort and time commitment  
+- Contribution from each collaborator  
+
+---
+
+## 15. 📄 Curriculum Vitae
+- CVs of PI and key team members  
+- Highlight relevant experience and publications  
+
+---
+
+## 16. 🙏 Acknowledgment
+- Recognition of supporting institutions or agencies  
+- Ethical approvals or regulatory considerations  
+
+---
+
+## 17. 📎 Appendices
+- Letters of support or collaboration  
+- Preliminary data or pilot results  
+- Supplementary figures or tables  

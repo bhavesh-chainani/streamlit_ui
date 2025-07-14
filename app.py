@@ -7,7 +7,7 @@ import re
 st.set_page_config(page_title="Grant Proposal Assistant", layout="centered")
 
 # Custom CSS for highlighting and buttons
-custom_css = '''
+custom_css = """
 <style>
 .missing-info {
     background-color: #fff2ac;
@@ -31,7 +31,7 @@ custom_css = '''
     background-color: #ef6c00;
 }
 </style>
-'''
+"""
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Display PwC logo
@@ -40,28 +40,24 @@ st.image("images/pwc_logo.png", width=100)
 st.title("🧠 Grant Proposal Assistant")
 
 # Default prompt
-default_prompt = (
-    "I would like to apply for a grant to fund research in healthcare in Singapore,"
-    " which companies provide these grants?"
-)
+default_prompt = "Climate resilience, Singapore"
 
 # Initialize session state
-if "chat_submitted" not in st.session_state:
-    st.session_state.chat_submitted = False
-if "report_generated" not in st.session_state:
-    st.session_state.report_generated = False
-if "schema_checked" not in st.session_state:
-    st.session_state.schema_checked = False
-if "research_uploaded" not in st.session_state:
-    st.session_state.research_uploaded = False
-if "chatbot_output" not in st.session_state:
-    st.session_state.chatbot_output = ""
-if "selected_grant_button" not in st.session_state:
-    st.session_state.selected_grant_button = None
+for key in [
+    "chat_submitted",
+    "report_generated",
+    "schema_checked",
+    "research_uploaded",
+    "chatbot_output",
+    "selected_grant_button",
+    "grant_input",
+]:
+    if key not in st.session_state:
+        st.session_state[key] = False if key != "chatbot_output" else ""
 
-# Step 1: Initial Chatbot
+# Step 1: Initial Chatbot Query
 user_input = st.text_area(
-    "Ask me anything about your grant proposal:",
+    "Please specify your research area and location to view available funding opportunities/programmes.",
     value=default_prompt,
     height=68,
 )
@@ -78,39 +74,37 @@ if st.button("Submit Query"):
             with open("data/initial_chatbot_response.txt", "r", encoding="utf-8") as f:
                 st.session_state.chatbot_output = f.read()
 
-# Display chatbot response if available
+# Display chatbot response
 if st.session_state.chat_submitted and st.session_state.chatbot_output:
     st.success("Here's the response:")
     st.markdown(st.session_state.chatbot_output)
 
-    # Grant Proposal Selection
-    st.markdown("### 📑 These are the grant proposals above, which grant would you like us to choose?")
-    
+    st.markdown(
+        "### 📑 These are the grant proposals above, which grant would you like us to choose?"
+    )
+
     try:
         grant_df = pd.read_excel("data/grant_companies.xlsx")
         st.dataframe(grant_df, use_container_width=True)
     except Exception as e:
         st.error(f"❌ Failed to load grant_companies.xlsx: {e}")
 
-    st.markdown("### 🎯 Select Grant Provider")
+    st.markdown("### 🧾 Specify Grant Provider Name")
 
-    # Central aligned button-based selection (one per line)
-    providers = [
-        "A*STAR",
-        "NMRC (MOH)",
-        "National Research Foundation",
-        "Enterprise Singapore",
-        "Temasek Foundation",
-    ]
-    for provider in providers:
-        if st.button(provider, key=provider):
-            st.session_state.selected_grant_button = provider
-            st.success(f"✅ Selected: {provider}")
+    grant_input = st.text_input(
+        "Please type the name of the grant provider (e.g., A*STAR):"
+    )
+    if st.button("Submit Grant Provider"):
+        if grant_input.strip():
+            st.session_state.selected_grant_button = grant_input.strip()
+            st.success(f"✅ Selected: {st.session_state.selected_grant_button}")
 
 # Display selected grant template with buffer time
 if st.session_state.selected_grant_button:
     try:
-        with st.spinner(f"🧾 Generating template report for {st.session_state.selected_grant_button}..."):
+        with st.spinner(
+            f"🧾 Generating template report for {st.session_state.selected_grant_button}..."
+        ):
             time.sleep(2)
             with open("data/template.txt", "r", encoding="utf-8") as f:
                 template_text = f.read()
@@ -121,9 +115,13 @@ if st.session_state.selected_grant_button:
 
 # Step 2: Upload Research Paper
 if st.session_state.chat_submitted and st.session_state.selected_grant_button:
-    st.markdown("**📄 Would you like me to leverage the best resources and create a grant report that aligns with this template?**")
+    st.markdown(
+        "**📄 Would you like me to leverage the best resources and create a grant report that aligns with this template?**"
+    )
     st.markdown("**If yes, upload your initial research paper below 👇**")
-    uploaded_file = st.file_uploader("Upload your research paper (PDF, TXT, or DOCX)", type=["pdf", "txt", "docx"])
+    uploaded_file = st.file_uploader(
+        "Upload your research paper (PDF, TXT, or DOCX)", type=["pdf", "txt", "docx"]
+    )
     if uploaded_file is not None:
         st.session_state.research_uploaded = True
         st.success("Research paper uploaded successfully!")

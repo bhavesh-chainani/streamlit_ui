@@ -1,84 +1,129 @@
-### 1. 🧬 Introduction
-- Singapore has seen a rise in age-related chronic illnesses such as Type 2 Diabetes and Cardiovascular Disease.  
-- Current research focuses on predictive diagnostics and health data monitoring.  
-- However, early detection and real-time intervention capabilities remain limited.  
-Source: https://www.healthhub.sg/programmes/88/war-on-diabetes
+## Enhancing Urban Food Resilience through Climate-Smart Agriculture: A Comprehensive Research Proposal
 
----
+**1. General Information**
 
-### 2. 🎯 Scientific Objectives
-- To develop a wearable device that monitors blood biomarkers for early detection of chronic diseases.  
-- Hypothesis: Real-time biomarker tracking improves early diagnosis and intervention.  
-Source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6463026/
+Singapore, as a highly urbanized and land-scarce city-state, faces unique challenges in ensuring long-term food security amidst growing climate uncertainties. With over 90% of its food imported, the nation remains vulnerable to global supply chain disruptions, extreme weather events, and geopolitical tensions. In response, Singapore has committed to strengthening its agri-food resilience through innovative and sustainable approaches, including the “30 by 30” goal—aiming to produce 30% of its nutritional needs locally by 2030.
 
----
+This research project, titled **“Enhancing Urban Food Resilience through Climate-Smart Agriculture in Singapore: A Multi-pronged Approach,”** seeks to contribute meaningfully to this national agenda. Led by SIT, and supported by a consortium of esteemed collaborators including **A*STAR – Singapore Food Agency (SFA)** and **Wageningen University & Research (WUR)**, the project will explore and implement climate-smart agricultural strategies tailored to Singapore’s urban context.
 
-### 3. 🧪 Methodology
-- **Study Design:** A three-phase mixed-method prospective cohort:  
-  1. **Phase I (Bench Testing):** Calibration and analytical validation of the electrochemical sensor array.  
-  2. **Phase II (Pilot Deployment):** 50 healthy volunteers wear the device for 2 months to refine usability and data capture.  
-  3. **Phase III (Field Trial):** 200 participants (100 Type 2 Diabetes, 100 high cardiovascular risk) monitored over 12 months in a prospective observational cohort.
+Over a period of **three years**, and with a funding request of **SGD 2.5 million**, this initiative will adopt a multi-disciplinary and systems-based approach. It will integrate advanced technologies, data-driven decision-making, and community engagement to develop scalable models for urban farming that are resilient to climate variability. The project will also assess the socio-economic and environmental impacts of these models, ensuring that proposed solutions are not only technically viable but also socially inclusive and ecologically sustainable.
 
-- **Experimental Workflow:**  
-  1. Device fabrication (flexible electrochemical sensor + Bluetooth module)  
-  2. Bench testing (sensitivity/specificity vs. lab assays)  
-  3. Clinical pilot (wearable on volunteers; continuous data logging)  
-  4. Algorithm development (signal preprocessing → feature extraction → model training)  
-  5. Validation against gold-standard blood biomarker measurements.
+By leveraging cross-institutional expertise and international best practices, this research aims to position Singapore as a global leader in urban food resilience and climate-smart agriculture. The outcomes will inform policy, guide future investments, and empower local stakeholders to participate actively in shaping a more secure and sustainable food future.
 
-- **Data Plan:**  
-  - Raw sensor streams via Bluetooth to AWS IoT Core.  
-  - Preprocessing: noise filtering using Python (SciPy).  
-  - Feature extraction: time- and frequency-domain metrics.  
-  - Modeling: Random Forest and SVM in scikit-learn, evaluated by RMSE and Pearson’s correlation against lab assays.
 
----
+**2. Scientific Abstract of the Proposal**
 
-### 4. 📈 Expected Outcomes
-- Deliverables: Information Not Available  
-- Success Criteria: Information Not Available  
+This project addresses the critical challenge of ensuring food security in Singapore amidst the growing threats of climate change and global supply chain disruptions.  By focusing on the development and implementation of advanced, climate-resilient vertical farming systems, the project aims to significantly enhance Singapore's capacity for sustainable local food production.  These systems will integrate cutting-edge technologies, including AI-driven crop monitoring, precision irrigation, and renewable energy integration, to optimize yield, nutritional value, and resource efficiency under projected climate change scenarios.  The project leverages the combined expertise of A*STAR, SIT, SFA, and WUR to create a holistic, impactful, and scalable solution that directly contributes to Singapore’s “30 by 30” food security goal. This research will not only develop technological solutions but also analyze the economic feasibility, social acceptance, and policy implications of widespread vertical farming adoption in Singapore.
+Source: https://www.sfa.gov.sg/food-for-thought/article/detail/levelling-up-singapore-s-food-supply-resilience
 
----
+**3. Objectives**
 
-### 5. 🇸🇬 Relevance to Singapore & A*STAR RIE2025 Priorities
-- Supports Singapore’s Smart Nation goals through digital health innovation.  
-- Addresses national priorities in managing chronic diseases and reducing healthcare burden.  
-Source: https://www.a-star.edu.sg/About-A-STAR/astar-2025
+* **Objective 1:** Design, construct, and evaluate modular, scalable vertical farming systems adaptable to future climate variability (temperature, humidity, light intensity fluctuations, extreme weather events).
+* **Objective 2:** Develop and validate robust AI models for real-time crop health monitoring, yield prediction, automated pest and disease detection, and resource optimization (water, nutrients, energy).
+* **Objective 3:** Assess the nutritional content, quality, and safety of crops grown within the climate-resilient vertical farming system compared to conventionally grown produce.
+* **Objective 4:** Develop and implement strategies for integrating renewable energy sources (solar, wind) into vertical farming systems to minimize environmental impact.
+* **Objective 5:** Conduct a comprehensive life cycle assessment (LCA) of the developed vertical farming systems to evaluate their environmental footprint and identify areas for improvement.
+* **Objective 6:**  Analyze the economic feasibility and market potential of the developed technology, including cost-benefit analysis and potential business models.
+* **Objective 7:** Investigate consumer perceptions and acceptance of vertically farmed produce through surveys and focus groups.
+* **Objective 8:** Contribute to national food resilience and innovation strategies through knowledge dissemination, policy recommendations, and stakeholder engagement.
 
----
 
-### 6. 👥 Personnel & Team Composition
-- **PI:** Information Not Available  
-- **Co-PIs:** Information Not Available  
-- **Partners:** Information Not Available  
+**4. Methodology**
 
----
+* **Study Design:**
+    * Controlled environment trials in prototype vertical farms located at A*STAR facilities and SIT's Agri-Tech Innovation Centre.
+    * Development of customized IoT sensor networks in collaboration with NUS, incorporating advanced sensing technologies for microclimate monitoring and plant physiological parameters.
+    * AI model training using data from multispectral imaging, IoT sensors (temperature, humidity, light, nutrient levels, CO2, plant biometrics), and plant growth parameters.
+    * Nutritional profiling of harvested crops using metabolomics, proteomics, and sensory analysis at SIT laboratories.
+    * Economic modeling and market analysis conducted by A*STAR researchers with expertise in agri-business.
+    * Consumer surveys and focus groups facilitated by social scientists from a local university.
+* **Workflow:**
+    1. System prototyping and environmental parameter calibration, incorporating feedback from WUR experts on optimizing for tropical conditions.
+    2. Data collection from pilot vertical farms under simulated climate change scenarios (increased temperature, extreme rainfall events, reduced sunlight).
+    3. Parallel development of specialized sensors by NUS and AI model development by A*STAR, focusing on early disease detection and automated pest control.
+    4. Integration of renewable energy systems into the vertical farm design and evaluation of energy efficiency.
+    5. Nutritional analysis of harvested crops and comparison with conventionally grown produce, including sensory evaluation to assess taste and texture.
+    6. Economic feasibility assessment and development of potential business models for commercialization.
+    7. Consumer perception studies to gauge public acceptance and identify potential barriers to adoption.
+    8. Life cycle assessment to evaluate environmental impacts and identify areas for optimization.
+* **Data Plan:**
+    * Real-time sensor data streamed to a secure cloud platform (AWS IoT) for storage and analysis.
+    * Data preprocessing, feature extraction, and quality control using Python libraries (NumPy, SciPy, Pandas).
+    * Predictive modeling using advanced machine learning algorithms (XGBoost, Convolutional Neural Networks, Recurrent Neural Networks).
+    * Development of a user-friendly data visualization dashboard for real-time monitoring and decision support.
+    * Data management and sharing protocols following FAIR principles (Findable, Accessible, Interoperable, Reusable).
 
-### 7. 🗓️ Workplan & Milestones
-- Year 1: Information Not Available  
-- Year 2: Information Not Available  
-- Year 3: Information Not Available  
 
----
+**5. Expected Scientific Results of the Joint Research** 
 
-### 8. ⚖️ Ethics & Regulatory Considerations
-- IRB approval submitted to NHG DSRB.  
-- Patient data anonymized and encrypted per PDPA requirements.  
-Source: https://www.pdpc.gov.sg/overview-of-pdpa/the-legislation/personal-data-protection-act
+* Validated protocols and best practices for climate-smart urban farming in a tropical environment, including optimized designs for vertical farming modules and environmental control systems.
+* Robust AI models for predictive crop management, resource optimization, early disease detection, and automated pest control in vertical farms, demonstrated through field trials and validated against real-world data.
+* Development of novel, low-cost sensors for precise monitoring of plant health and environmental parameters, potentially leading to patentable technologies.
+* Comprehensive datasets on the nutritional composition and quality of vertically farmed produce under various climate scenarios, contributing to a deeper understanding of the impact of controlled environment agriculture on food quality.
+* Peer-reviewed publications in high-impact journals (e.g., *Agricultural Systems*, *Computers and Electronics in Agriculture*, *Frontiers in Plant Science*) and presentations at international conferences (e.g.,  International Conference on Agricultural Engineering, Global Forum for Innovations in Agriculture).
+* Open-access datasets and software tools for the broader research community, fostering collaboration and accelerating innovation in urban agriculture.
+* Detailed life cycle assessment of the developed vertical farming systems, providing insights into environmental impacts and informing sustainable design principles.
+* Economic feasibility studies and market analyses, providing valuable data for potential investors and entrepreneurs interested in commercializing the technology.
+*  Reports on consumer perceptions and acceptance of vertically farmed produce, informing marketing strategies and product development.
+* Contribution to A*STAR’s food innovation roadmap and Singapore's "30 by 30" initiative, providing evidence-based recommendations for policy development and implementation.
+Source: https://www.a-star.edu.sg/sifbi
 
----
+**6. Expected Economic and Social Impact of the Joint Research** 
 
-### 9. 💸 Detailed Budget
-- **Manpower:** $300,000 (salaries for 4 FTE over 3 years)  
-- **Consumables & Equipment:** $150,000 (sensor fabrication kits)  
-- **Travel & Conferences:** $50,000 (international presentations)  
-- **Cloud Infrastructure:** AWS IoT Core data ingestion at $0.145/MB for first 50 MB  
 
-*Justification:* Equipment includes wearable fabrication, sensor modules, and cloud services.
+* Strengthened local food supply chains and reduced reliance on imported produce, enhancing Singapore's food security and resilience to global disruptions.
+* Increased efficiency and productivity in urban farming, contributing to economic growth and creating new business opportunities in the agri-tech sector.
+* Improved public health through access to nutrient-rich, safe, and locally grown produce, potentially reducing the prevalence of diet-related diseases.
+* Creation of new, skilled job opportunities in the agri-tech sector, requiring expertise in areas such as AI, data science, and vertical farming operations.
+* Commercialization potential for the developed smart farming systems and technologies, contributing to Singapore's economic competitiveness and creating export opportunities.
+*  Enhanced public awareness and understanding of sustainable food production methods, promoting greater adoption of environmentally friendly practices.
+* Fostering a more resilient and sustainable food system in Singapore, contributing to the nation's overall sustainability goals.
+Source: https://www.sg101.gov.sg/economy/case-studies/sg-food-challenge/
 
----
+**7. Keywords** 
 
-### 10. 📎 Appendices
-- **Appendix A:** Study Protocol (WHO recommended format)  
-- **Appendix B:** Informed Consent Form Templates  
-- **Appendix C:** Data Management Plan Outline (A*STAR guidelines)
+Food resilience, Vertical farming, Climate-smart agriculture, AI in agriculture, Nutritional security, Singapore, "30 by 30", Precision agriculture, IoT, Machine learning, Controlled environment agriculture,  Renewable energy integration,  Life cycle assessment, Economic feasibility, Consumer acceptance, Food security policy, Sustainable food systems,  Urban agriculture,  Hydroponics, Aeroponics, Aquaponics
+
+
+**8. Research Topic and Work Plan** 
+
+* **Year 1 (2026):**  System design and construction of prototype vertical farms,  development of customized sensor networks in collaboration with NUS,  deployment of pilot vertical farms at A*STAR and SIT facilities, baseline data collection, preliminary AI model development, initial consumer perception surveys,  literature review on best practices in vertical farming and climate-smart agriculture.
+* **Year 2 (2027):** AI model refinement and validation using data from pilot farms, integration and testing of NUS-developed sensors,  mid-term evaluation of system performance and crop yields, commencement of nutritional analysis at SIT laboratories,  preliminary economic feasibility assessment,  development of renewable energy integration strategies,  data sharing and publication of initial findings.
+* **Year 3 (2028):** Comprehensive nutritional analysis and sensory evaluation of harvested crops, scalability testing and detailed economic feasibility assessment,  life cycle assessment of the developed systems, final reporting, dissemination of results through publications and conferences, exploration of commercialization pathways,  policy recommendations based on research findings,  organization of a stakeholder workshop to disseminate results and gather feedback.
+
+
+**9. Detailed Description of Joint Project** 
+
+* **A*STAR:** Lead system engineering and design, AI model development and validation, project coordination, economic feasibility analysis,  liaison with SFA on policy implications.
+* **SIT:** Nutritional profiling, metabolomics analysis, and sensory evaluation of harvested crops,  contribution to data analysis and interpretation,  hosting pilot vertical farm trials at their Agri-Tech Innovation Centre.
+* **Wageningen University & Research (WUR):** Expertise in agronomy, plant physiology, and climate modeling, contribution to system design and optimization for tropical conditions,  consultations on best practices for vertical farming.
+* **SFA:** Regulatory guidance on food safety and agricultural practices, support for deployment and integration with national food strategies,  feedback on policy implications of research findings.
+* **NUS Department of Electrical and Computer Engineering:**  Development of customized, low-cost sensor networks for precise monitoring of plant health and environmental parameters within the vertical farms.
+
+**10. Problem Statement** 
+
+Singapore's heavy reliance on food imports (>90%) creates a significant vulnerability to global supply chain disruptions, geopolitical instability, and the increasing impacts of climate change, including extreme weather events, rising temperatures, and changes in rainfall patterns.  Conventional agriculture is also resource-intensive, requiring significant land, water, and energy inputs. This project addresses the urgent need for resilient, local, and technologically advanced food production systems that can operate efficiently within a limited land area while minimizing environmental impact.  By developing and implementing climate-smart vertical farming systems, this project aims to enhance Singapore's food security while promoting sustainable resource management.
+
+
+**11. Future Prospect of Research** 
+
+
+* Expansion of the developed technologies and methodologies to other urban centers in the region, contributing to regional food security and promoting sustainable development.
+*  Development of educational programs and training materials to build capacity in vertical farming and urban agriculture, empowering individuals and communities to contribute to local food production.
+* Integration with national food strategy and contribution to the “30 by 30” goal, providing a concrete pathway towards achieving greater food self-sufficiency.
+*  Establishment of public-private partnerships to accelerate the commercialization and adoption of the developed technologies.
+* Potential for commercialization and export of smart farming technology to international markets, creating economic opportunities and positioning Singapore as a leader in urban agriculture innovation.
+* Long-term research collaborations to further enhance the sustainability and efficiency of urban food production, exploring areas such as advanced automation,  circular economy principles in vertical farming, and the integration of artificial intelligence with plant breeding programs.
+* Development of standardized protocols and best practices for vertical farming in tropical environments, facilitating knowledge transfer and wider adoption of the technology.
+Source: https://www.channelnewsasia.com/singapore/vegetables-seafood-singapore-food-price-cost-farmers-security-4442626
+
+**12 Work Contribution** 
+
+
+* **Principal Investigator (SIT):** Overall project coordination, system design, liaison with collaborators,  securing necessary permits and approvals,  management of project budget,  reporting to funding agencies.
+* **Co-Investigators:**
+    * **A*STAR Team:**  AI model development and validation,  data analysis and interpretation,  economic feasibility studies,  development of data visualization dashboard.
+    * **SIT Team:**  Nutritional analysis, metabolomics and proteomics analysis, sensory evaluation of crops,  management of pilot vertical farm at SIT facilities.
+    * **Wageningen University & Research Team:**  Consultations on system design and optimization for tropical conditions, agronomic advice, review of research findings.
+    * **NUS Team:** Design and development of customized sensor networks,  integration of sensors with data acquisition system,  technical support for sensor deployment and maintenance.
+* **Collaborators (SFA):** Regulatory guidance on food safety and agricultural practices,  facilitation of interactions with relevant government agencies,  feedback on policy implications of research findings.

@@ -1,0 +1,84 @@
+### 1. 🧬 Introduction
+- Singapore has seen a rise in age-related chronic illnesses such as Type 2 Diabetes and Cardiovascular Disease.  
+- Current research focuses on predictive diagnostics and health data monitoring.  
+- However, early detection and real-time intervention capabilities remain limited.  
+Source: https://www.healthhub.sg/programmes/88/war-on-diabetes
+
+---
+
+### 2. 🎯 Scientific Objectives
+- To develop a wearable device that monitors blood biomarkers for early detection of chronic diseases.  
+- Hypothesis: Real-time biomarker tracking improves early diagnosis and intervention.  
+Source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6463026/
+
+---
+
+### 3. 🧪 Methodology
+- **Study Design:** A three-phase mixed-method prospective cohort:  
+  1. **Phase I (Bench Testing):** Calibration and analytical validation of the electrochemical sensor array.  
+  2. **Phase II (Pilot Deployment):** 50 healthy volunteers wear the device for 2 months to refine usability and data capture.  
+  3. **Phase III (Field Trial):** 200 participants (100 Type 2 Diabetes, 100 high cardiovascular risk) monitored over 12 months in a prospective observational cohort.
+
+- **Experimental Workflow:**  
+  1. Device fabrication (flexible electrochemical sensor + Bluetooth module)  
+  2. Bench testing (sensitivity/specificity vs. lab assays)  
+  3. Clinical pilot (wearable on volunteers; continuous data logging)  
+  4. Algorithm development (signal preprocessing → feature extraction → model training)  
+  5. Validation against gold-standard blood biomarker measurements.
+
+- **Data Plan:**  
+  - Raw sensor streams via Bluetooth to AWS IoT Core.  
+  - Preprocessing: noise filtering using Python (SciPy).  
+  - Feature extraction: time- and frequency-domain metrics.  
+  - Modeling: Random Forest and SVM in scikit-learn, evaluated by RMSE and Pearson’s correlation against lab assays.
+
+---
+
+### 4. 📈 Expected Outcomes
+- Deliverables: Information Not Available  
+- Success Criteria: Information Not Available  
+
+---
+
+### 5. 🇸🇬 Relevance to Singapore & A*STAR RIE2025 Priorities
+- Supports Singapore’s Smart Nation goals through digital health innovation.  
+- Addresses national priorities in managing chronic diseases and reducing healthcare burden.  
+Source: https://www.a-star.edu.sg/About-A-STAR/astar-2025
+
+---
+
+### 6. 👥 Personnel & Team Composition
+- **PI:** Information Not Available  
+- **Co-PIs:** Information Not Available  
+- **Partners:** Information Not Available  
+
+---
+
+### 7. 🗓️ Workplan & Milestones
+- Year 1: Information Not Available  
+- Year 2: Information Not Available  
+- Year 3: Information Not Available  
+
+---
+
+### 8. ⚖️ Ethics & Regulatory Considerations
+- IRB approval submitted to NHG DSRB.  
+- Patient data anonymized and encrypted per PDPA requirements.  
+Source: https://www.pdpc.gov.sg/overview-of-pdpa/the-legislation/personal-data-protection-act
+
+---
+
+### 9. 💸 Detailed Budget
+- **Manpower:** $300,000 (salaries for 4 FTE over 3 years)  
+- **Consumables & Equipment:** $150,000 (sensor fabrication kits)  
+- **Travel & Conferences:** $50,000 (international presentations)  
+- **Cloud Infrastructure:** AWS IoT Core data ingestion at $0.145/MB for first 50 MB  
+
+*Justification:* Equipment includes wearable fabrication, sensor modules, and cloud services.
+
+---
+
+### 10. 📎 Appendices
+- **Appendix A:** Study Protocol (WHO recommended format)  
+- **Appendix B:** Informed Consent Form Templates  
+- **Appendix C:** Data Management Plan Outline (A*STAR guidelines)
