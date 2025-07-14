@@ -107,7 +107,7 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
     st.markdown(st.session_state.chatbot_output)
 
     st.markdown(
-        "### 📑 These are the grant proposals above, which grant would you like us to choose?"
+        "### 📑 These are the grant proposals below, which grant would you like us to choose?"
     )
 
     try:
