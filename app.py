@@ -67,7 +67,7 @@ st.image("images/pwc_logo.png", width=100)
 
 st.title("🧠 Grant Proposal Assistant")
 
-default_prompt = "Climate resilience, Singapore"
+default_prompt = "Research Area - Climate Resilience\nCountry - Singapore"
 
 # Session state setup
 for key in [
