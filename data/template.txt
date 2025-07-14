@@ -1,0 +1,68 @@
+---
+
+#### 📄 **Template: Grant Proposal (A*STAR-Aligned)**
+
+
+#### 1. 🧬 **Introduction**
+- Background of the health issue  
+- Current research landscape  
+- Unmet needs or challenges  
+
+---
+
+#### 2. 🎯 **Scientific Objectives**
+- Primary objective(s)  
+- Hypotheses or research questions  
+
+---
+
+#### 3. 🧪 **Methodology**
+- Study design  
+- Experimental workflow / technical approach  
+- Data collection & analysis plan  
+
+---
+
+#### 4. 📈 **Expected Outcomes**
+- Tangible deliverables (e.g., prototypes, clinical data, publications)  
+- Success criteria  
+
+---
+
+#### 5. 🇸🇬 **Relevance to Singapore & A*STAR RIE2025 Priorities**
+- Translational value or commercialization potential  
+- National healthcare impact  
+
+---
+
+#### 6. 👥 **Personnel & Team Composition**
+- Principal Investigator (PI) & Co-PIs  
+- Roles and responsibilities  
+- Collaborators (local/international, clinical partners)  
+
+---
+
+#### 7. 🗓️ **Workplan & Milestones**
+- Project timeline over 2–3 years  
+- Key deliverables and checkpoints  
+- *(Gantt chart optional)*
+
+---
+
+#### 8. ⚖️ **Ethics & Regulatory Considerations**
+- IRB approvals  
+- Patient data handling and privacy  
+
+---
+
+#### 9. 💸 **Detailed Budget**
+- Manpower, consumables, equipment, travel  
+- Justification of major costs  
+
+---
+
+#### 10. 📎 **Appendices**
+- CVs of key personnel  
+- Letters of collaboration  
+- Preliminary data (if any)  
+"""
