@@ -6,37 +6,33 @@ import re
 # Set page config
 st.set_page_config(page_title="Grant Proposal Assistant", layout="centered")
 
-# Custom CSS for highlighting missing info
-highlight_css = '''
+# Custom CSS for highlighting and buttons
+custom_css = '''
 <style>
 .missing-info {
     background-color: #fff2ac;
     padding: 2px 4px;
     border-radius: 2px;
 }
-.button-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-}
 .button {
     background-color: #f57c00;
     color: white;
-    padding: 0.6em 1.5em;
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
+    padding: 0.8em 1.5em;
+    margin: 0.4em auto;
+    border: none;
+    border-radius: 10px;
     font-weight: bold;
-    font-size: 16px;
+    width: 60%;
+    display: block;
+    text-align: center;
     transition: background-color 0.3s ease;
-    cursor: pointer;
 }
 .button:hover {
     background-color: #ef6c00;
 }
 </style>
 '''
-st.markdown(highlight_css, unsafe_allow_html=True)
+st.markdown(custom_css, unsafe_allow_html=True)
 
 # Display PwC logo
 st.image("images/pwc_logo.png", width=100)
@@ -89,43 +85,39 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
 
     # Grant Proposal Selection
     st.markdown("### 📑 These are the grant proposals above, which grant would you like us to choose?")
+    
+    try:
+        grant_df = pd.read_excel("data/grant_companies.xlsx")
+        st.dataframe(grant_df, use_container_width=True)
+    except Exception as e:
+        st.error(f"❌ Failed to load grant_companies.xlsx: {e}")
 
-    # grant_df = pd.DataFrame({
-    #     "Agency": ["A*STAR", "PUB", "ABC"],
-    #     "Focus Area": [
-    #         "Biomedical & Translational Research",
-    #         "Water & Sustainability Innovation",
-    #         "AI & Technology for Social Good"
-    #     ],
-    #     "Funding Amount (S$)": ["500,000", "300,000", "250,000"],
-    #     "Duration": ["3 years", "2 years", "1.5 years"]
-    # })
-    grant_df = pd.read_excel("data/grant_companies.xlsx")
-    st.dataframe(grant_df, use_container_width=True)
+    st.markdown("### 🎯 Select Grant Provider")
 
-    # Centered grant buttons using Streamlit columns
-    spacer1, col1, col2, col3, spacer2 = st.columns([1, 2, 2, 2, 1])
-    with col1:
-        if st.button("🧬 A*STAR"):
-            st.session_state.selected_grant_button = "A*STAR"
-    with col2:
-        if st.button("💧 PUB"):
-            st.session_state.selected_grant_button = "PUB"
-    with col3:
-        if st.button("🤖 ABC"):
-            st.session_state.selected_grant_button = "ABC"
+    # Central aligned button-based selection (one per line)
+    providers = [
+        "A*STAR",
+        "NMRC (MOH)",
+        "National Research Foundation",
+        "Enterprise Singapore",
+        "Temasek Foundation",
+    ]
+    for provider in providers:
+        if st.button(provider, key=provider):
+            st.session_state.selected_grant_button = provider
+            st.success(f"✅ Selected: {provider}")
 
-    # Display selected grant template with buffer time
-    if st.session_state.selected_grant_button:
-        try:
-            with st.spinner(f"🧾 Generating template report for {st.session_state.selected_grant_button}..."):
-                time.sleep(2)  # Simulate loading time
-                with open("data/template.txt", "r", encoding="utf-8") as f:
-                    template_text = f.read()
-            st.success(f"📄 Showing Template for {st.session_state.selected_grant_button}")
-            st.markdown(template_text, unsafe_allow_html=True)
-        except Exception as e:
-            st.error(f"❌ Could not load template: {e}")
+# Display selected grant template with buffer time
+if st.session_state.selected_grant_button:
+    try:
+        with st.spinner(f"🧾 Generating template report for {st.session_state.selected_grant_button}..."):
+            time.sleep(2)
+            with open("data/template.txt", "r", encoding="utf-8") as f:
+                template_text = f.read()
+        st.success(f"📄 Showing Template for {st.session_state.selected_grant_button}")
+        st.markdown(template_text, unsafe_allow_html=True)
+    except Exception as e:
+        st.error(f"❌ Could not load template: {e}")
 
 # Step 2: Upload Research Paper
 if st.session_state.chat_submitted and st.session_state.selected_grant_button:
