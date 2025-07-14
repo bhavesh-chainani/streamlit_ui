@@ -107,7 +107,7 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
     st.markdown(st.session_state.chatbot_output)
 
     st.markdown(
-        "### 📑 These are the grant proposals below, which grant would you like us to choose?"
+        "### 📑 These are research grants available for your area for interest, which grant would you like to apply for?"
     )
 
     try:
@@ -154,14 +154,31 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
     except Exception as e:
         st.error(f"❌ Failed to load grant_companies.xlsx: {e}")
 
-    st.markdown("### 🧾 Specify Grant Provider Name")
-    grant_input = st.text_input(
-        "Please type the name of the grant provider (e.g., A*STAR):"
+    # st.markdown("### 🧾 Specify Grant Provider Name")
+    # grant_input = st.text_input(
+    #     "Please type the name of the grant provider (e.g., A*STAR):"
+    # )
+    # if st.button("Submit Grant Provider"):
+    #     if grant_input.strip():
+    #         st.session_state.selected_grant_button = grant_input.strip()
+    #         st.success(f"✅ Selected: {st.session_state.selected_grant_button}")
+
+    st.markdown("### 🧾 Select a Grant Provider")
+
+    grant_options = [
+        "Agency for Science, Technology and Research (A*STAR)",
+        "Public Utilities Board (PUB)",
+        "National University of Singapore (NUS)",
+        "National Environment Agency (NEA)",
+    ]
+
+    selected_option = st.radio(
+        "Choose a grant provider:", grant_options, index=0, key="grant_provider_radio"
     )
+
     if st.button("Submit Grant Provider"):
-        if grant_input.strip():
-            st.session_state.selected_grant_button = grant_input.strip()
-            st.success(f"✅ Selected: {st.session_state.selected_grant_button}")
+        st.session_state.selected_grant_button = selected_option
+        st.success(f"✅ Selected: {st.session_state.selected_grant_button}")
 
 # Display selected grant template
 if st.session_state.selected_grant_button:
@@ -180,7 +197,7 @@ if st.session_state.selected_grant_button:
 # Upload research paper
 if st.session_state.chat_submitted and st.session_state.selected_grant_button:
     st.markdown(
-        "**📄 Would you like me to leverage the best resources and create a grant report that aligns with this template?**"
+        "**📄 Would you like me to leverage available knowledge sources and create a grant application that aligns with this template? If yes, upload your initial research grant application draft below.**"
     )
     st.markdown("**If yes, upload your initial research paper below 👇**")
     uploaded_file = st.file_uploader(
@@ -192,7 +209,7 @@ if st.session_state.chat_submitted and st.session_state.selected_grant_button:
 
 # Generate report
 if st.session_state.research_uploaded:
-    if st.button("📝 Generate Report"):
+    if st.button("📝 Generate Grant Application Draft"):
         st.session_state.report_generated = True
         with st.spinner("Creating A*STAR-style report..."):
             loading_steps = [
@@ -237,7 +254,7 @@ if st.session_state.report_generated:
             st.markdown(highlighted_report, unsafe_allow_html=True)
 
         st.download_button(
-            label="📄 Download Report as .txt",
+            label="📄 Download Application Draft as .txt",
             data=report,
             file_name="grant_proposal.txt",
             mime="text/plain",
@@ -247,11 +264,11 @@ if st.session_state.report_generated:
 
 # Check data schema
 if st.session_state.report_generated:
-    if st.button("🔍 Check Data Schema"):
+    if st.button("🔍 Check compliance of drafted grant application with existing requirements"):
         st.session_state.schema_checked = True
         try:
             table_data_df = pd.read_excel("data/table_data.xlsx")
-            st.success("✅ Proposal Section Checklist")
+            st.success("✅ Research Grant Application Checklist")
             st.dataframe(table_data_df, use_container_width=True)
         except Exception as e:
             st.error(f"❌ Failed to load table_data.xlsx: {e}")

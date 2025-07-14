@@ -1,9 +1,9 @@
-# 📄 Grant Proposal Template  
-**A*STAR-Aligned – Food Resilience Focus**
+# 📄 Research Grant Application Template
+**A*STAR – Food Resilience Focus**
 
 ---
 
-## 1. 🧾 General Information
+### 1. 🧾 General Information
 - **Project Title**  
 - **Principal Investigator (PI) & Institution**  
 - **Co-Investigators & Collaborators**  
@@ -12,41 +12,41 @@
 
 ---
 
-## 2. 🧪 Scientific Abstract of the Proposal
+### 2. 🧪 Scientific Abstract of the Proposal
 - Concise summary of the research aims  
 - Key methodologies  
 - Expected outcomes and impact on food resilience
 
 ---
 
-## 3. 🎯 Objectives
+### 3. 🎯 Objectives
 - Primary and secondary research objectives  
 - Specific hypotheses or research questions
 
 ---
 
-## 4. 🔬 Methodology
+### 4. 🔬 Methodology
 - Study design and experimental setup  
 - Data collection and analysis techniques  
 - Technologies or platforms to be used
 
 ---
 
-## 5. 📊 Expected Scientific Results of the Joint Research
+### 5. 📊 Expected Scientific Results of the Joint Research
 - Anticipated findings and innovations  
 - Contribution to scientific knowledge in food systems  
 - Potential for publications or patents
 
 ---
 
-## 6. 🌍 Expected Economic and Social Impact of the Joint Research
+### 6. 🌍 Expected Economic and Social Impact of the Joint Research
 - Contribution to Singapore’s food security  
 - Commercialization potential  
 - Societal benefits (e.g., nutrition, sustainability, climate resilience)
 
 ---
 
-## 7. 🏷️ Keywords
+### 7. 🏷️ Keywords
 - Food resilience  
 - Sustainable agriculture  
 - Alternative proteins  
@@ -55,67 +55,67 @@
 
 ---
 
-## 8. 📅 Research Topic and Work Plan
+### 8. 📅 Research Topic and Work Plan
 - Detailed breakdown of research phases  
 - Timeline and milestones  
 - *(Optional: Gantt chart or visual timeline)*
 
 ---
 
-## 9. 📘 Detailed Description of Joint Project
+### 9. 📘 Detailed Description of Joint Project
 - Roles of each partner institution  
 - Integration of expertise and resources  
 - Collaboration mechanisms and communication plan
 
 ---
 
-## 10. ❗ Problem Statement
+### 10. ❗ Problem Statement
 - Description of the food resilience challenge  
 - Gaps in current solutions  
 - Justification for the proposed research
 
 ---
 
-## 11. 🔮 Future Prospect of Research
+### 11. 🔮 Future Prospect of Research
 - Long-term vision and scalability  
 - Potential for follow-up studies or spin-offs  
 - Alignment with national and global food strategies
 
 ---
 
-## 12. 📚 Bibliography
+### 12. 📚 Bibliography
 - Key references supporting the proposal  
 - Prior work by the team
 
 ---
 
-## 13. 💰 Budget Description
+### 13. 💰 Budget Description
 - Detailed breakdown of budget allocation  
 - Justification for major cost items  
 - Co-funding or in-kind contributions (if any)
 
 ---
 
-## 14. 🤝 Work Contribution
+### 14. 🤝 Work Contribution
 - Breakdown of responsibilities among team members  
 - Estimated effort and time commitment  
 - Contribution from each collaborator
 
 ---
 
-## 15. 📄 Curriculum Vitae
+### 15. 📄 Curriculum Vitae
 - CVs of PI and key team members  
 - Highlight relevant experience and publications
 
 ---
 
-## 16. 🙏 Acknowledgment
+### 16. 🙏 Acknowledgment
 - Recognition of supporting institutions or agencies  
 - Ethical approvals or regulatory considerations
 
 ---
 
-## 17. 📎 Appendices
+### 17. 📎 Appendices
 - Letters of support or collaboration  
 - Preliminary data or pilot results  
 - Supplementary figures or tables
