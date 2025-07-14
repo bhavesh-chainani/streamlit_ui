@@ -65,7 +65,11 @@ if "selected_grant_button" not in st.session_state:
     st.session_state.selected_grant_button = None
 
 # Step 1: Initial Chatbot
-user_input = st.text_input("Ask me anything about your grant proposal:", value=default_prompt)
+user_input = st.text_area(
+    "Ask me anything about your grant proposal:",
+    value=default_prompt,
+    height=68,
+)
 
 if st.button("Submit Query"):
     if user_input.strip():
