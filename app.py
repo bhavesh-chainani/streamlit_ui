@@ -45,9 +45,8 @@ st.title("🧠 Grant Proposal Assistant")
 
 # Default prompt
 default_prompt = (
-    "I would like to apply for a grant to fund research in healthcare "
-    "following ASTAR Singapore format, what are the specific instructions "
-    "that provide this funding?"
+    "I would like to apply for a grant to fund research in healthcare in Singapore,"
+    "which companies provide these grants?"
 )
 
 # Initialize session state
