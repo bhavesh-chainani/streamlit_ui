@@ -264,7 +264,9 @@ if st.session_state.report_generated:
 
 # Check data schema
 if st.session_state.report_generated:
-    if st.button("🔍 Check compliance of drafted grant application with existing requirements"):
+    if st.button(
+        "🔍 Check compliance of drafted grant application with existing requirements"
+    ):
         st.session_state.schema_checked = True
         try:
             table_data_df = pd.read_excel("data/table_data.xlsx")
