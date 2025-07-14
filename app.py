@@ -46,7 +46,7 @@ st.title("🧠 Grant Proposal Assistant")
 # Default prompt
 default_prompt = (
     "I would like to apply for a grant to fund research in healthcare in Singapore,"
-    "which companies provide these grants?"
+    " which companies provide these grants?"
 )
 
 # Initialize session state
@@ -90,16 +90,17 @@ if st.session_state.chat_submitted and st.session_state.chatbot_output:
     # Grant Proposal Selection
     st.markdown("### 📑 These are the grant proposals above, which grant would you like us to choose?")
 
-    grant_df = pd.DataFrame({
-        "Agency": ["A*STAR", "PUB", "ABC"],
-        "Focus Area": [
-            "Biomedical & Translational Research",
-            "Water & Sustainability Innovation",
-            "AI & Technology for Social Good"
-        ],
-        "Funding Amount (S$)": ["500,000", "300,000", "250,000"],
-        "Duration": ["3 years", "2 years", "1.5 years"]
-    })
+    # grant_df = pd.DataFrame({
+    #     "Agency": ["A*STAR", "PUB", "ABC"],
+    #     "Focus Area": [
+    #         "Biomedical & Translational Research",
+    #         "Water & Sustainability Innovation",
+    #         "AI & Technology for Social Good"
+    #     ],
+    #     "Funding Amount (S$)": ["500,000", "300,000", "250,000"],
+    #     "Duration": ["3 years", "2 years", "1.5 years"]
+    # })
+    grant_df = pd.read_excel("data/grant_companies.xlsx")
     st.dataframe(grant_df, use_container_width=True)
 
     # Centered grant buttons using Streamlit columns
